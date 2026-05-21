@@ -3,7 +3,7 @@ import { Provider } from './provider';
 import './globals.css';
 
 export const metadata = {
-  title: 'Anjali Maddeshiya — Developer Portfolio',
+  title: 'Sumit Kumar — Developer Portfolio',
   description: 'Full-stack developer portfolio showcasing projects, skills, and experience. Built with Next.js and Chakra UI.',
   keywords: ['developer', 'portfolio', 'full-stack', 'react', 'nextjs'],
 };

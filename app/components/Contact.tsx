@@ -7,8 +7,8 @@ import { Send, MapPin, Mail, Phone, Github, Linkedin, Loader2 } from "lucide-rea
 
 const SOCIAL_LINKS = [
   { icon: <Github size={20} />, label: "GitHub", href: "https://github.com/anjalimadd", color: "#a78bfa" },
-  { icon: <Linkedin size={20} />, label: "LinkedIn", href: "https://www.linkedin.com/in/anjali-maddeshiya/", color: "#6366f1" },
-  { icon: <Mail size={20} />, label: "Email", href: "mailto:anjalimadd.dev@gmail.com", color: "#2dd4bf" },
+  { icon: <Linkedin size={20} />, label: "LinkedIn", href: "http://linkedin.com/in/sumitkrk", color: "#6366f1" },
+  { icon: <Mail size={20} />, label: "Email", href: "mailto:sumitkumar308786@gmail.com", color: "#2dd4bf" },
 ];
 
 export default function Contact() {
@@ -156,9 +156,9 @@ export default function Contact() {
             <Flex direction="column" gap="6">
               {/* Info Cards */}
               {[
-                { icon: <Mail size={18} />, label: "Email", value: "anjalimadd.dev@gmail.com", color: "#6366f1" },
-                { icon: <MapPin size={18} />, label: "Location", value: "Noida, India", color: "#2dd4bf" },
-                { icon: <Phone size={18} />, label: "Phone", value: "+91 9910266402", color: "#f59e0b" },
+                { icon: <Mail size={18} />, label: "Email", value: "sumitkumar308786@gmail.com", color: "#6366f1" },
+                { icon: <MapPin size={18} />, label: "Location", value: "Jaipur, India", color: "#2dd4bf" },
+                { icon: <Phone size={18} />, label: "Phone", value: "+91 8229857645", color: "#f59e0b" },
               ].map((info) => (
                 <Flex
                   key={info.label}

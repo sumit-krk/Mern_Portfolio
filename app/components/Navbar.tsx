@@ -91,7 +91,7 @@ export default function Navbar() {
             }}
             className="gradient-text"
           >
-            {"<AM />"}
+            {"<SK />"}
           </a>
 
           {/* Desktop Links */}

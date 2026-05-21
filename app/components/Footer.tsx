@@ -41,7 +41,7 @@ export default function Footer() {
               className="gradient-text"
               fontFamily="'Space Grotesk', sans-serif"
             >
-              {"<AM />"}
+              {"<SK />"}
             </Text>
             <Text fontSize="xs" color="rgba(255,255,255,0.3)">
               Crafting digital experiences
@@ -71,9 +71,9 @@ export default function Footer() {
           {/* Right – Social + Back to top */}
           <Flex align="center" gap="3">
             {[
-              { icon: <Github size={15} />, href: "https://github.com/anjalimadd" },
-              { icon: <Linkedin size={15} />, href: "https://www.linkedin.com/in/anjali-maddeshiya/" },
-              { icon: <Mail size={15} />, href: "mailto:anjalimadd.dev@gmail.com" },
+              { icon: <Github size={15} />, href: "https://github.com/sumit-krk" },
+              { icon: <Linkedin size={15} />, href: "https://www.linkedin.com/in/sumitkrk/" },
+              { icon: <Mail size={15} />, href: "mailto:sumitkumar308786@gmail.com" },
             ].map((s, i) => (
               <a
                 key={i}
@@ -125,7 +125,7 @@ export default function Footer() {
           borderTop="1px solid rgba(255,255,255,0.04)"
         >
           <Text fontSize="xs" color="rgba(255,255,255,0.2)">
-            © {new Date().getFullYear()} Anjali Maddeshiya. Made with
+            © {new Date().getFullYear()} Sumit Kumar. Made with
           </Text>
           <Heart size={12} color="#ef4444" fill="#ef4444" />
           <Text fontSize="xs" color="rgba(255,255,255,0.2)">

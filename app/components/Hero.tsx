@@ -177,7 +177,7 @@ export default function Hero() {
             className="gradient-text"
             fontFamily="'Space Grotesk', sans-serif"
           >
-            Anjali Maddeshiya
+            Sumit Kumar
           </Text>
         </MotionBox>
 
@@ -309,9 +309,9 @@ export default function Hero() {
         >
           <Flex gap="3" mt="2">
             {[
-              { icon: <Github size={18} />, href: "https://github.com/anjalimadd", label: "GitHub" },
-              { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/anjali-maddeshiya/", label: "LinkedIn" },
-              { icon: <Mail size={18} />, href: "mailto:anjalimadd.dev@gmail.com", label: "Email" },
+              { icon: <Github size={18} />, href: "https://github.com/sumit-krk", label: "GitHub" },
+              { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/sumitkrk/", label: "LinkedIn" },
+              { icon: <Mail size={18} />, href: "mailto:sumitkumar308786@gmail.com", label: "Email" },
             ].map((s) => (
               <a
                 key={s.label}

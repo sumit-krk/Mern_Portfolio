@@ -6,13 +6,13 @@ import { MotionBox, fadeInUp, staggerContainer } from "./MotionBox";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
-const FILTERS = ["All", "SaaS", "Hospitality Tech", "Web"];
+const FILTERS = ["All", "SaaS", "Web"];
 
 const PROJECTS = [
   {
-    title: "Multi-Workspace CRM PWA",
+    title: "Vriti.ai",
     description:
-      "Multi-workspace CRM PWA with Next.js 15, React 19, and TypeScript, streamlining a GraphQL data layer that accelerated feature release cadence by 30% across all active workspaces.",
+      "Vriti.ai is an AI-powered job portal featuring resume parsing, AI-based job recommendations, profile-based auto-apply, AI interviews, and end-to-end job application tracking, enhancing candidate and recruiter experience while improving hiring efficiency by 40%.",
     tags: [
       "Next.js",
       "React 19",
@@ -22,28 +22,12 @@ const PROJECTS = [
     ],
     category: "SaaS",
     github: "https://github.com/anjalimadd",
-    live: "#",
+    live: "https://vriti.ai/",
   },
   {
-    title: "Hotel Management Admin Dashboard",
+    title: "Social Vaarta",
     description:
-      "High-traffic SSR-based dashboard managing bookings, inventory, and reporting modules.",
-    tags: [
-      "Next.js",
-      "Redux Toolkit",
-      "SSR",
-      "REST APIs",
-      "Performance Optimization",
-      "TypeScript",
-    ],
-    category: "Hospitality Tech",
-    github: "https://github.com/anjalimadd",
-    live: "#",
-  },
-  {
-    title: "High-Performance Data Tables Engine",
-    description:
-      "Virtualized Kanban boards and data tables handling 10,000+ records using TanStack Table and TanStack Virtual, implemented batch  ed GraphQL with optimistic UI updates, cutting API calls by 35% and boosting perceived interaction speed by 40%.",
+      "Social Vaarta is an AI-powered social media management platform that enables users to manage multiple social accounts from a centralized dashboard, automate posting, and analyze reactions & comments, reducing daily social media efforts by 50%.",
     tags: [
       "React.js",
       "TypeScript",
@@ -54,12 +38,12 @@ const PROJECTS = [
     ],
     category: "SaaS",
     github: "https://github.com/anjalimadd",
-    live: "#",
+    live: "https://social.vaarta.ai/login",
   },
   {
-    title: "SSR Hotel Admin Migration",
+    title: "Visionary AI",
     description:
-      "Led CSR-to-SSR migration of core hotel admin modules in Next.js, implementing server-side caching and next/image optimization that reduced initial page load time by 20% and improved Lighthouse performance scores",
+      "Visionary AI is a generative AI platform that creates text, images, and videos based on user prompts, leveraging powerful AI models to generate high-quality, pixel-perfect outputs with enhanced accuracy.",
     tags: [
       "Next.js",
       "SSR",
@@ -67,31 +51,33 @@ const PROJECTS = [
       "Next.js Image Optimization",
       "Lighthouse Performance Scores",
     ],
-    category: "Hospitality Tech",
-    github: "https://github.com/anjalimadd",
-    live: "#",
-  },
-  {
-    title: "Real-Time Messaging System",
-    description:
-      "Built WhatsApp messaging and Notes modules with Lexical editor, media handling, read receipts, and emoji reactions, increasing user engagement by 25%",
-    tags: [
-      "WebSockets",
-      "GraphQL subscriptions",
-      "Live Updates",
-      "Cache Synchronization",
-    ],
     category: "SaaS",
     github: "https://github.com/anjalimadd",
-    live: "#",
+    live: "https://visionary.vaarta.ai/login",
   },
+  // {
+  //   title: "Staffing",
+  //   description:
+  //     "Staffing is a job portal (Part of the Vriti website) that provides end-to-end solutions for posting Vendor and contract-specific jobs and it also works upon providing resources on permanent and contract basis.",
+  //   tags: [
+  //     "Next.js",
+  //     "Redux Toolkit",
+  //     "SSR",
+  //     "REST APIs",
+  //     "Performance Optimization",
+  //     "TypeScript",
+  //   ],
+  //   category: "SaaS",
+  //   github: "https://github.com/anjalimadd",
+  //   live: "https://staffing.vriti.ai/",
+  // },
   {
     title: "Portfolio Website",
     description:
       "This premium dark-themed portfolio built with Next.js 16, Chakra UI v3, and Framer Motion with interactive animations.",
     tags: ["Next.js", "Chakra UI", "Framer Motion", "TypeScript"],
     category: "Web",
-  github: "https://github.com/anjalimadd",
+    github: "https://github.com/anjalimadd",
     live: "#"
   },
 ];
@@ -259,7 +245,7 @@ export default function Projects() {
                             display: "inline-flex",
                           }}
                         >
-                          <Github size={14} />
+                        {project.category !== "SaaS" && <Github size={14} />}
                         </a>
                         <a
                           href={project.live}

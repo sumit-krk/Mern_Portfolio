@@ -7,61 +7,67 @@ import { Briefcase, Calendar, MapPin, ChevronDown } from "lucide-react";
 
 const EXPERIENCES = [
   {
-    company: "Allyos.ai",
+    company: "Marktine Technologies",
     role: "Software Engineer",
-    period: "Oct 2025 — Present",
-    location: "Remote",
+    period: "Mar 2023 — Mar 2026",
+    location: "Jaipur, India",
     color: "#6366f1",
     description:
       "Leading frontend development of multi-workspace CRM & Productivity PWA architecture",
     highlights: [
-      "Architected a multi-workspace CRM and Productivity PWA with Next.js 15, React 19, and TypeScript, streamlining a GraphQL data layer that accelerated feature release cadence by 30% across all active workspaces.",
-      "Built virtualized Kanban boards and data tables handling 10,000+ records using TanStack Table and TanStack Virtual, implemented batch  ed GraphQL with optimistic UI updates, cutting API calls by 35% and boosting perceived interaction speed by 40%.",
-      "Replaced REST polling with GraphQL subscriptions (graphql-ws) across messaging, workspace events, and notification systems, eliminating redundant polling calls per session and reducing real-time event latency by 50%.",
-      "Built WhatsApp messaging and Notes modules with Lexical editor, media handling, read receipts, and emoji reactions, increasing user engagement by 25%",
+      "Solely architected and developed the entire front-end of an enterprise-grade SaaS platform from scratch using React.js, Next.js, and TypeScript, managing everything from complex UI state to seamless API integrations.",
+      "Engineered a multi-channel Social Integration system enabling users to securely link 7+ major platforms (LinkedIn, Instagram, Facebook, Pinterest, YouTube, Telegram, and X/Twitter) within 3-4 clicks, streamlining cross-platform authorization.",
+      "Developed a unified Social Composer & Scheduler module that allowed simultaneous post creation, scheduling, and multi-network publishing from a single dashboard, improving daily content operations efficiency by 50%.",
+      "Integrated Generative AI & Machine Learning APIs to build an advanced automated engagement engine, reducing manual social media operational time by up to 70%.",
+      "Implemented NLP-driven sentiment and reaction filters (Positive, Negative, Neutral) for post comments and likes, enabling the system to auto-reply using custom pre-defined template libraries or context-aware AI-generated responses.",
+      "Built a robust Real-time Social Analytics Dashboard using advanced data-visualization techniques to display high-volume metrics like Unique Impressions (359k+ data points), Engagement Rates, and Custom Tracking.",
+      "Designed complex Frontend state management workflows for asynchronous ML API responses, prompt-based media updates, and custom post configuration controls (Marketing, Sales, and Recruitment objectives).",
+      "Optimized application performance through code-splitting, lazy loading, and efficient rendering, resulting in a 40% improvement in page rendering speed and a 35% reduction in production bundle size."
     ],
   },
   {
-    company: "Accenture",
-    role: "Software Engineer",
-    period: "Oct 2024 — Oct 2025",
-    location: "Gurugram, India",
+    company: "Nobroker",
+    role: "Frontend Developer",
+    period: "Feb 2022 — Aug 2022",
+    location: "Bengaluru, India",
     color: "#2dd4bf",
     description:
       "Built high-traffic hotel management dashboard with SSR optimizations.",
     highlights: [
-      "Led CSR-to-SSR migration of core hotel admin modules in Next.js, implementing server-side caching and next/image optimization that reduced initial page load time by 20% and improved Lighthouse performance scores",
-      "Optimized Redux Toolkit state management for high-frequency data flows in booking and inventory modules, reducing data-fetch latency by 25% and improving dashboard responsiveness under concurrent user load",
-      "Applied route-level code splitting, dynamic imports, and asset compression across the hotel management dashboard, shrinking JavaScript bundle size by 35% and sustaining 30% faster response times under peak traffic of concurrent users",
+      "Spearheaded the integration of third-party event modules and interactive gamification systems within the ecosystem, successfully boosting monthly user engagement and retention by 30% MoM (Month-on-Month).",
+      "Resolved 100+ complex UI defects and 10+ critical logical bottlenecks related to high-volume data pagination, infinite scrolling, and nested page navigation, significantly improving application stability.",
+      "Optimized core interface workflows and client-side rendering, resulting in a seamless, lag-free user experience and higher user satisfaction scores.",
+      "Collaborated closely with cross-functional teams to design high-converting, interactive interfaces that allowed users to participate in events and win rewards, driving organic platform growth.",
+      "Refactored legacy code segments to ensure smooth routing and state persistence across deeply nested user journeys."
     ],
   },
-  {
-    company: "CS Mock",
-    role: "Frontend Developer",
-    period: "Sept 2023 — Oct 2024",
-    location: "Noida, India",
-    color: "#f59e0b",
-    description:
-      "Optimized ed-tech platform performance and scalable state architecture.",
-    highlights: [
-      "Architected centralized Redux state management integrating RESTful API endpoints, enabling real-time data-driven UI updates and cutting average data-fetch latency by 30%",
-      "Diagnosed rendering bottlenecks using React Profiler and Chrome DevTools; restructured component tree with memoization, dynamic imports, and minification to reduce JavaScript bundle size by 40% and improve Time-to-Interactive by seconds",
-      "Built an automated asset optimization pipeline with WebP image conversion and intersection-observer lazy loading, lifting mobile Lighthouse Performance scores by 25 points across key device profiles",
-    ],
-  },
-  {
-    company: "CS Mock",
-    role: "Frontend Developer Intern",
-    period: "Jan 2023 — Jun 2023",
-    location: "Noida, India",
-    color: "#f59e0b",
-    description:
-      "Assisted in building an EdTech platform with React.js and Redux.",
-    highlights: [
-      "Assisted in building an EdTech platform with React.js and Redux, designed reusable components, debugged UI issues, and improved load time ",
-      "Ensured cross-browser support and code quality with senior dev guidance, Participated in stand-ups, reviews, and agile processes to ship faster releases",
-    ],
-  },
+  // {
+  //   company: "CS Mock",
+  //   role: "Frontend Developer",
+  //   period: "Sept 2023 — Oct 2024",
+  //   location: "Noida, India",
+  //   color: "#f59e0b",
+  //   description:
+  //     "Optimized ed-tech platform performance and scalable state architecture.",
+  //   highlights: [
+  //     "Architected centralized Redux state management integrating RESTful API endpoints, enabling real-time data-driven UI updates and cutting average data-fetch latency by 30%",
+  //     "Diagnosed rendering bottlenecks using React Profiler and Chrome DevTools; restructured component tree with memoization, dynamic imports, and minification to reduce JavaScript bundle size by 40% and improve Time-to-Interactive by seconds",
+  //     "Built an automated asset optimization pipeline with WebP image conversion and intersection-observer lazy loading, lifting mobile Lighthouse Performance scores by 25 points across key device profiles",
+  //   ],
+  // },
+  // {
+  //   company: "CS Mock",
+  //   role: "Frontend Developer Intern",
+  //   period: "Jan 2023 — Jun 2023",
+  //   location: "Noida, India",
+  //   color: "#f59e0b",
+  //   description:
+  //     "Assisted in building an EdTech platform with React.js and Redux.",
+  //   highlights: [
+  //     "Assisted in building an EdTech platform with React.js and Redux, designed reusable components, debugged UI issues, and improved load time ",
+  //     "Ensured cross-browser support and code quality with senior dev guidance, Participated in stand-ups, reviews, and agile processes to ship faster releases",
+  //   ],
+  // },
 ];
 
 export default function Experience() {
@@ -231,7 +237,7 @@ export default function Experience() {
 
                     {/* Expanded Details */}
                     <Box
-                      maxH={expanded === i ? "300px" : "0px"}
+                      maxH={expanded === i ? "400px" : "0px"}
                       overflow="hidden"
                       transition="all 0.4s cubic-bezier(0.22,1,0.36,1)"
                       mt={expanded === i ? "4" : "0"}
