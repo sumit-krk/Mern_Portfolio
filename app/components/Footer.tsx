@@ -2,6 +2,7 @@
 
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { Heart, Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { EMAIL_COMPOSE_LINK, EXTERNAL_LINK_PROPS } from "./contactLinks";
 
 export default function Footer() {
   const handleScrollTop = () => {
@@ -73,13 +74,12 @@ export default function Footer() {
             {[
               { icon: <Github size={15} />, href: "https://github.com/sumit-krk" },
               { icon: <Linkedin size={15} />, href: "https://www.linkedin.com/in/sumitkrk/" },
-              { icon: <Mail size={15} />, href: "mailto:sumitkumar308786@gmail.com" },
+              { icon: <Mail size={15} />, href: EMAIL_COMPOSE_LINK },
             ].map((s, i) => (
               <a
                 key={i}
                 href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...EXTERNAL_LINK_PROPS}
                 style={{
                   padding: "8px",
                   borderRadius: "8px",

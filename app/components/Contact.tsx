@@ -4,11 +4,12 @@ import { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { MotionBox, fadeInUp, fadeInLeft, fadeInRight } from "./MotionBox";
 import { Send, MapPin, Mail, Phone, Github, Linkedin, Loader2 } from "lucide-react";
+import { EMAIL_ADDRESS, EMAIL_COMPOSE_LINK, EXTERNAL_LINK_PROPS } from "./contactLinks";
 
 const SOCIAL_LINKS = [
-  { icon: <Github size={20} />, label: "GitHub", href: "https://github.com/anjalimadd", color: "#a78bfa" },
+  { icon: <Github size={20} />, label: "GitHub", href: "https://github.com/sumit-krk", color: "#a78bfa" },
   { icon: <Linkedin size={20} />, label: "LinkedIn", href: "http://linkedin.com/in/sumitkrk", color: "#6366f1" },
-  { icon: <Mail size={20} />, label: "Email", href: "mailto:sumitkumar308786@gmail.com", color: "#2dd4bf" },
+  { icon: <Mail size={20} />, label: "Email", href: EMAIL_COMPOSE_LINK, color: "#2dd4bf" },
 ];
 
 export default function Contact() {
@@ -156,45 +157,62 @@ export default function Contact() {
             <Flex direction="column" gap="6">
               {/* Info Cards */}
               {[
-                { icon: <Mail size={18} />, label: "Email", value: "sumitkumar308786@gmail.com", color: "#6366f1" },
+                { icon: <Mail size={18} />, label: "Email", value: EMAIL_ADDRESS, color: "#6366f1", href: EMAIL_COMPOSE_LINK },
                 { icon: <MapPin size={18} />, label: "Location", value: "Jaipur, India", color: "#2dd4bf" },
                 { icon: <Phone size={18} />, label: "Phone", value: "+91 8229857645", color: "#f59e0b" },
-              ].map((info) => (
-                <Flex
-                  key={info.label}
-                  align="center"
-                  gap="4"
-                  p="4"
-                  borderRadius="xl"
-                  className="glass"
-                  transition="all 0.3s"
-                  _hover={{
-                    bg: "rgba(255,255,255,0.05)",
-                    transform: "translateX(4px)",
-                  }}
-                >
+              ].map((info) => {
+                const card = (
                   <Flex
                     align="center"
-                    justify="center"
-                    w="10"
-                    h="10"
+                    gap="4"
+                    p="4"
                     borderRadius="xl"
-                    bg={`${info.color}15`}
-                    color={info.color}
-                    flexShrink="0"
+                    className="glass"
+                    transition="all 0.3s"
+                    _hover={{
+                      bg: "rgba(255,255,255,0.05)",
+                      transform: "translateX(4px)",
+                    }}
                   >
-                    {info.icon}
+                    <Flex
+                      align="center"
+                      justify="center"
+                      w="10"
+                      h="10"
+                      borderRadius="xl"
+                      bg={`${info.color}15`}
+                      color={info.color}
+                      flexShrink="0"
+                    >
+                      {info.icon}
+                    </Flex>
+                    <Box>
+                      <Text fontSize="xs" color="rgba(255,255,255,0.35)" fontWeight="600" mb="0.5">
+                        {info.label}
+                      </Text>
+                      <Text fontSize="sm" color="rgba(255,255,255,0.7)" fontWeight="500">
+                        {info.value}
+                      </Text>
+                    </Box>
                   </Flex>
-                  <Box>
-                    <Text fontSize="xs" color="rgba(255,255,255,0.35)" fontWeight="600" mb="0.5">
-                      {info.label}
-                    </Text>
-                    <Text fontSize="sm" color="rgba(255,255,255,0.7)" fontWeight="500">
-                      {info.value}
-                    </Text>
-                  </Box>
-                </Flex>
-              ))}
+                );
+
+                if (info.href) {
+                  return (
+                    <a
+                      key={info.label}
+                      href={info.href}
+                      {...EXTERNAL_LINK_PROPS}
+                      aria-label={`Open email to ${EMAIL_ADDRESS}`}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {card}
+                    </a>
+                  );
+                }
+
+                return <Box key={info.label}>{card}</Box>;
+              })}
 
               {/* Social Links */}
               <Box mt="4">
@@ -206,8 +224,7 @@ export default function Contact() {
                     <a
                       key={s.label}
                       href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...EXTERNAL_LINK_PROPS}
                       aria-label={s.label}
                       className="glass"
                       style={{

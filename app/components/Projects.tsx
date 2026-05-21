@@ -21,7 +21,7 @@ const PROJECTS = [
       "Real-time Architecture",
     ],
     category: "SaaS",
-    github: "https://github.com/anjalimadd",
+    github: "https://github.com/sumit-krk",
     live: "https://vriti.ai/",
   },
   {
@@ -37,7 +37,7 @@ const PROJECTS = [
       "Optimistic UI",
     ],
     category: "SaaS",
-    github: "https://github.com/anjalimadd",
+    github: "https://github.com/sumit-krk",
     live: "https://social.vaarta.ai/login",
   },
   {
@@ -52,7 +52,7 @@ const PROJECTS = [
       "Lighthouse Performance Scores",
     ],
     category: "SaaS",
-    github: "https://github.com/anjalimadd",
+    github: "https://github.com/sumit-krk",
     live: "https://visionary.vaarta.ai/login",
   },
   // {
@@ -77,7 +77,7 @@ const PROJECTS = [
       "This premium dark-themed portfolio built with Next.js 16, Chakra UI v3, and Framer Motion with interactive animations.",
     tags: ["Next.js", "Chakra UI", "Framer Motion", "TypeScript"],
     category: "Web",
-    github: "https://github.com/anjalimadd",
+    github: "https://github.com/sumit-krk/Mern_Portfolio",
     live: "#"
   },
 ];

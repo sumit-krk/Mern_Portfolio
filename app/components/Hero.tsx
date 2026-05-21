@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { MotionBox, fadeInUp } from "./MotionBox";
 import { ChevronDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { EMAIL_COMPOSE_LINK, EXTERNAL_LINK_PROPS } from "./contactLinks";
 
 const ROLES = [
   "Frontend Engineer",
+  "MERN Stack Developer",
   "React & Next.js Expert",
   "Performance Optimizer",
   "TypeScript Enthusiast",
@@ -14,7 +16,7 @@ const ROLES = [
 
 /** Replace with your Google Doc link: File → Share → “Anyone with the link” → copy link */
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1XbB1Z4YDtZV7XGUzi5a5j-ATwkYYYpvC/view?usp=sharing";
+  "https://drive.google.com/file/d/1fIRciNluyWrowthGkYiNg2r-hRHd35GQ/view?usp=sharing";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -39,8 +41,10 @@ export default function Hero() {
           setDisplayText(displayText.slice(0, -1));
         }, 40);
       } else {
-        setIsDeleting(false);
-        setRoleIndex((prev) => (prev + 1) % ROLES.length);
+        timeout = setTimeout(() => {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % ROLES.length);
+        }, 0);
       }
     }
     return () => clearTimeout(timeout);
@@ -311,13 +315,12 @@ export default function Hero() {
             {[
               { icon: <Github size={18} />, href: "https://github.com/sumit-krk", label: "GitHub" },
               { icon: <Linkedin size={18} />, href: "https://www.linkedin.com/in/sumitkrk/", label: "LinkedIn" },
-              { icon: <Mail size={18} />, href: "mailto:sumitkumar308786@gmail.com", label: "Email" },
+              { icon: <Mail size={18} />, href: EMAIL_COMPOSE_LINK, label: "Email" },
             ].map((s) => (
               <a
                 key={s.label}
                 href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...EXTERNAL_LINK_PROPS}
                 aria-label={s.label}
                 style={{
                   padding: "12px",
