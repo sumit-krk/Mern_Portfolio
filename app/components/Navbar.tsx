@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1fIRciNluyWrowthGkYiNg2r-hRHd35GQ/view?usp=sharing";
+  "https://drive.google.com/file/d/1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE/view?usp=drive_link";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },

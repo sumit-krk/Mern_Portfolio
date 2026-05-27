@@ -16,7 +16,7 @@ const ROLES = [
 
 /** Replace with your Google Doc link: File → Share → “Anyone with the link” → copy link */
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1fIRciNluyWrowthGkYiNg2r-hRHd35GQ/view?usp=sharing";
+  "https://drive.google.com/file/d/1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE/view?usp=drive_link";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
