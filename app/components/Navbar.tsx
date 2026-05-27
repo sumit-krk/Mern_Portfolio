@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+
+const RESUME_LINK =
+  "https://drive.google.com/file/d/1fIRciNluyWrowthGkYiNg2r-hRHd35GQ/view?usp=sharing";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -12,12 +15,14 @@ const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: RESUME_LINK },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isSectionLink = (href: string) => href.startsWith("#");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +51,11 @@ export default function Navbar() {
   }, []);
 
   const handleClick = (e: React.MouseEvent, href: string) => {
+    if (!isSectionLink(href)) {
+      setMobileOpen(false);
+      return;
+    }
+
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) {
@@ -100,27 +110,33 @@ export default function Navbar() {
             display={{ base: "none", md: "flex" }}
             align="center"
           >
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleClick(e, link.href)}
-                style={{
-                  padding: "8px 16px",
-                  borderRadius: "12px",
-                  fontSize: "0.875rem",
-                  fontWeight: 500,
-                  color: activeSection === link.href.slice(1) ? "#a78bfa" : "rgba(255,255,255,0.6)",
-                  background: activeSection === link.href.slice(1) ? "rgba(139,92,246,0.1)" : "transparent",
-                  transition: "all 0.2s",
-                  cursor: "pointer",
-                  position: "relative",
-                  textDecoration: "none",
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = isSectionLink(link.href) && activeSection === link.href.slice(1);
+
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={isSectionLink(link.href) ? undefined : "_blank"}
+                  rel={isSectionLink(link.href) ? undefined : "noopener noreferrer"}
+                  onClick={(e) => handleClick(e, link.href)}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: "12px",
+                    fontSize: "0.875rem",
+                    fontWeight: 500,
+                    color: isActive ? "#a78bfa" : "rgba(255,255,255,0.6)",
+                    background: isActive ? "rgba(139,92,246,0.1)" : "transparent",
+                    transition: "all 0.2s",
+                    cursor: "pointer",
+                    position: "relative",
+                    textDecoration: "none",
+                  }}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </Flex>
 
           {/* Mobile Hamburger */}
@@ -162,26 +178,32 @@ export default function Navbar() {
             }}
           >
             <Flex direction="column" gap="1">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleClick(e, link.href)}
-                  style={{
-                    padding: "12px 16px",
-                    borderRadius: "12px",
-                    fontSize: "0.875rem",
-                    fontWeight: 500,
-                    color: activeSection === link.href.slice(1) ? "#a78bfa" : "rgba(255,255,255,0.6)",
-                    background: activeSection === link.href.slice(1) ? "rgba(139,92,246,0.1)" : "transparent",
-                    transition: "all 0.2s",
-                    cursor: "pointer",
-                    textDecoration: "none",
-                  }}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = isSectionLink(link.href) && activeSection === link.href.slice(1);
+
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target={isSectionLink(link.href) ? undefined : "_blank"}
+                    rel={isSectionLink(link.href) ? undefined : "noopener noreferrer"}
+                    onClick={(e) => handleClick(e, link.href)}
+                    style={{
+                      padding: "12px 16px",
+                      borderRadius: "12px",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      color: isActive ? "#a78bfa" : "rgba(255,255,255,0.6)",
+                      background: isActive ? "rgba(139,92,246,0.1)" : "transparent",
+                      transition: "all 0.2s",
+                      cursor: "pointer",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </Flex>
           </motion.div>
         )}

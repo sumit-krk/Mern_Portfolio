@@ -5,7 +5,8 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { MotionBox, fadeInUp, staggerContainer } from "./MotionBox";
 import {
   Code2, Database, Globe, Palette, Server,
-  Terminal, GitBranch, Cloud, Layers, Cpu,
+  Terminal, Cloud, Layers, Cpu, Monitor,
+  Lightbulb, Clock3, Repeat2,
 } from "lucide-react";
 
 const SKILL_CATEGORIES = [
@@ -27,20 +28,53 @@ const SKILL_CATEGORIES = [
     skills: [
       { name: "Redux Toolkit / Hooks", level: 90, icon: <Server size={16} /> },
       { name: "React Query / REST APIs", level: 88, icon: <Database size={16} /> },
-      { name: "GraphQL / Apollo", level: 80, icon: <Layers size={16} /> },
-      { name: "OAuth2 / Auth", level: 82, icon: <Terminal size={16} /> },
+      { name: "GraphQL", level: 45, icon: <Layers size={16} /> },
+      { name: "OAuth2 / Auth", level: 70, icon: <Terminal size={16} /> },
     ],
   },
   {
-    title: "DevOps & Tools",
+    title: "Backend",
     icon: <Cloud size={20} />,
     color: "#f59e0b",
     skills: [
-      { name: "Jest / Cypress / RTL", level: 85, icon: <Cpu size={16} /> },
-      { name: "Docker / Jenkins / GH Actions", level: 82, icon: <GitBranch size={16} /> },
-      { name: "AWS Lambda / S3 / EC2", level: 80, icon: <Cloud size={16} /> },
-      { name: "Webpack / Vite / Lighthouse", level: 88, icon: <Terminal size={16} /> },
+      { name: "Node / Express.js", level: 50, icon: <Cpu size={16} /> },
+      { name: "AWS Lambda / Jenkins / S3 / EC2", level: 45, icon: <Cloud size={16} /> },
+      { name: "MongoDB / SQL", level: 45, icon: <Database size={16} /> },
+      { name: "Mongoose / Routes / Models", level: 45, icon: <Monitor size={16} /> },
     ],
+  },
+  
+  // {
+  //   title: "DevOps & Tools",
+  //   icon: <Cloud size={20} />,
+  //   color: "#f59e0b",
+  //   skills: [
+  //     { name: "Jest / Cypress / RTL", level: 85, icon: <Cpu size={16} /> },
+  //     { name: "Docker / Jenkins / GH Actions", level: 82, icon: <GitBranch size={16} /> },
+  //     { name: "AWS Lambda / S3 / EC2", level: 80, icon: <Cloud size={16} /> },
+  //     { name: "Webpack / Vite / Lighthouse", level: 88, icon: <Terminal size={16} /> },
+  //   ],
+  // },
+];
+
+const SOFT_SKILLS = [
+  {
+    title: "Problem-Solving",
+    description: "Breaking complex product issues into clear, practical, user-focused solutions.",
+    icon: <Lightbulb size={22} />,
+    color: "#facc15",
+  },
+  {
+    title: "Time Management",
+    description: "Prioritizing work, meeting deadlines, and keeping delivery calm under pressure.",
+    icon: <Clock3 size={22} />,
+    color: "#38bdf8",
+  },
+  {
+    title: "Adaptability",
+    description: "Learning quickly, adjusting to changing needs, and staying effective across teams.",
+    icon: <Repeat2 size={22} />,
+    color: "#a78bfa",
   },
 ];
 
@@ -227,6 +261,116 @@ export default function Skills() {
                     </Box>
                   ))}
                 </Flex>
+              </Box>
+            </MotionBox>
+          ))}
+        </MotionBox>
+      </Box>
+      <Box maxW="1100px" mx="auto" mt={{ base: "14", md: "20" }}>
+        {/* Header */}
+        <MotionBox
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          textAlign="center"
+          mb={{ base: "8", md: "12" }}
+        >
+          <Text
+            fontSize="xs"
+            fontWeight="700"
+            letterSpacing="0.2em"
+            textTransform="uppercase"
+            color="#2dd4bf"
+            mb="3"
+          >
+            Soft Skills
+          </Text>
+          <Text
+            as="h2"
+            fontSize={{ base: "3xl", md: "4xl" }}
+            fontWeight="800"
+            letterSpacing="-0.03em"
+            color="white"
+            fontFamily="'Space Grotesk', sans-serif"
+          >
+            Strengths{" "}
+            <Text as="span" className="gradient-text">
+              beyond code
+            </Text>
+          </Text>
+        </MotionBox>
+
+        {/* Soft Skills */}
+        <MotionBox
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          display="grid"
+          gridTemplateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
+          gap="6"
+        >
+          {SOFT_SKILLS.map((skill) => (
+            <MotionBox key={skill.title} variants={fadeInUp}>
+              <Box
+                className="glass glow-border"
+                p={{ base: "6", md: "7" }}
+                borderRadius="2xl"
+                h="full"
+                minH="220px"
+                position="relative"
+                overflow="hidden"
+                transition="all 0.35s cubic-bezier(0.22,1,0.36,1)"
+                _hover={{
+                  bg: "rgba(255,255,255,0.06)",
+                  transform: "translateY(-6px)",
+                  boxShadow: `0 20px 60px ${skill.color}18`,
+                }}
+              >
+                <Box
+                  position="absolute"
+                  top="-40px"
+                  right="-40px"
+                  w="130px"
+                  h="130px"
+                  borderRadius="full"
+                  bg={`${skill.color}14`}
+                  filter="blur(4px)"
+                  pointerEvents="none"
+                />
+
+                <Flex
+                  align="center"
+                  justify="center"
+                  w="12"
+                  h="12"
+                  borderRadius="xl"
+                  bg={`${skill.color}18`}
+                  color={skill.color}
+                  mb="6"
+                  boxShadow={`0 0 28px ${skill.color}18`}
+                >
+                  {skill.icon}
+                </Flex>
+
+                <Text
+                  fontSize="lg"
+                  fontWeight="700"
+                  color="white"
+                  mb="3"
+                  fontFamily="'Space Grotesk', sans-serif"
+                >
+                  {skill.title}
+                </Text>
+
+                <Text
+                  fontSize="sm"
+                  lineHeight="1.8"
+                  color="rgba(255,255,255,0.55)"
+                >
+                  {skill.description}
+                </Text>
               </Box>
             </MotionBox>
           ))}
