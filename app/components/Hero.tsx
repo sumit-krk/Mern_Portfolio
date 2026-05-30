@@ -16,7 +16,7 @@ const ROLES = [
 
 /** Replace with your Google Doc link: File → Share → “Anyone with the link” → copy link */
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE/view?usp=drive_link";
+  "https://drive.google.com/uc?export=download&id=1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE";
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -275,8 +275,7 @@ export default function Hero() {
             </button>
             <a
               href={RESUME_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Sumit-Kumar-Resume.pdf"
               style={{
                 padding: "12px 28px",
                 borderRadius: "12px",
