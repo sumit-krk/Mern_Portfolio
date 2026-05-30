@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const RESUME_LINK =
-  "https://drive.google.com/file/d/1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE/view?usp=drive_link";
+  "https://drive.google.com/uc?export=download&id=1FS_u45nUbvPfy3ymMV53Q38UrTg_UxiE";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
-  { label: "Resume", href: RESUME_LINK },
+  { label: "Resume", href: RESUME_LINK, download: "Sumit-Kumar-Resume.pdf" },
 ];
 
 export default function Navbar() {
@@ -117,8 +117,9 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  target={isSectionLink(link.href) ? undefined : "_blank"}
-                  rel={isSectionLink(link.href) ? undefined : "noopener noreferrer"}
+                  target={isSectionLink(link.href) || link.download ? undefined : "_blank"}
+                  rel={isSectionLink(link.href) || link.download ? undefined : "noopener noreferrer"}
+                  download={link.download}
                   onClick={(e) => handleClick(e, link.href)}
                   style={{
                     padding: "8px 16px",
@@ -185,8 +186,9 @@ export default function Navbar() {
                   <a
                     key={link.href}
                     href={link.href}
-                    target={isSectionLink(link.href) ? undefined : "_blank"}
-                    rel={isSectionLink(link.href) ? undefined : "noopener noreferrer"}
+                    target={isSectionLink(link.href) || link.download ? undefined : "_blank"}
+                    rel={isSectionLink(link.href) || link.download ? undefined : "noopener noreferrer"}
+                    download={link.download}
                     onClick={(e) => handleClick(e, link.href)}
                     style={{
                       padding: "12px 16px",
